@@ -1,7 +1,7 @@
-base     dokucms
-author   Klaus Vormweg
+base     brain4free
+author   Christoph Zimmermann
 email    klaus.vormweg@gmx.de
-date     2016-03-20
-name     DokuCMS Template
-desc     A template for using DokuWiki as a CMS
+date     2015-10-25
+name     brain4free Template
+desc     Template used on brain4free.org. Based on dokucms by Klaus Vormweg
 url      http://www.tuhh.de/~psvkv/dokucms/index.html

@@ -20,16 +20,34 @@ div.dokuwiki .stylehead {
 
 div.dokuwiki .header {
   height: 6.4em;
-  background: -webkit-linear-gradient(left, #fff, #fff, __background_alt__);
-  background: -o-linear-gradient(right, #fff, #fff, __background_alt__);
-  background: -moz-linear-gradient(right, #fff, #fff, __background_alt__);
-  background: linear-gradient(to right, #fff, #fff, __background_alt__);
+  background: -webkit-linear-gradient(left, #000, #000, __background_alt__);
+  background: -o-linear-gradient(right, #000, #000, __background_alt__);
+  background: -moz-linear-gradient(right, #000, #000, __background_alt__);
+  background: linear-gradient(to right, #000, #000, __background_alt__);
 } 
 
 div.dokuwiki .pagename {
   text-align: left;
   padding: 2.5em 0 2.5em 19.5em;
-  background: transparent __yourlogo__ no-repeat 0 0;
+  vertical-align: middle;
+}
+
+div.dokuwiki .logoleft {
+  float: left;
+  height: 75px;
+  color: __background_alt__;
+  vertical-align: middle;
+  padding: 0.6em 0 0 100px;
+  background: __background_alt__ __yourlogoleft__ no-repeat bottom right;
+}
+
+div.dokuwiki .logoright {
+  float: right;
+  height: 75px;
+  color: __background_alt__;
+  vertical-align: middle;
+  padding: 0.6em 0 0 100px;
+  background: __background_alt__ __yourlogoright__ no-repeat bottom right;
 }
 
 div.dokuwiki .pagename a {
@@ -42,7 +60,7 @@ div.dokuwiki .pagename a {
 /* ---------------  bottom bar ---------------- */
 div.dokuwiki .bar {
   float: left;
-  background-color: __background_neu__;
+  background-color: __background_alt__;
   width: 100%;
   clear: both;
   min-width: 75.5em;
@@ -71,7 +89,7 @@ div.dokuwiki .stylefoot  {
   clear: both;
   color: __text_alt__;
   height: 3em;
-  background-color: #fff;
+  background-color: __background_alt__;
 }
 
 div.dokuwiki .stylefoot div.homelink {
@@ -172,7 +190,6 @@ div.dokuwiki div.wrap {
   width: 100%;
   overflow: hidden;
   min-width: 75.5em;
-  background: __background_alt__  url(images/fc.png) repeat-y 16em 0;
 }
 
 /* the document */
@@ -180,7 +197,7 @@ div.dokuwiki div.page {
   margin: 0 0 0 16em;
   padding: 1.25em 1em 0 3.25em;
   overflow: hidden;
-  background-color: transparent;
+  background-color: __background_alt__;
 }
 
 /* -------------- general elements --------------- */
@@ -190,7 +207,7 @@ html { font-size: 100.01%; }
 
 body {
   font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
-  background-color: #ccc;
+  background-color: __background_alt__;
   color: __text__;
   line-height: 1.4em;
   text-align: left;

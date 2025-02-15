@@ -38,6 +38,8 @@ echo '
 html_msgarea();
 echo '  <header class="stylehead">
     <div class="header">
+      <div class="logoleft"></div>
+      <div class="logoright"></div>
       <div class="pagename">',"\n";
 tpl_link(wl(),$conf['title'],'name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]"');
 echo '      </div>
@@ -81,7 +83,7 @@ echo '  <footer class="stylefoot">',"\n";
 if($ACT != 'diff' and $ACT != 'edit' and $ACT != 'preview' and $ACT != 'admin' 
    and  $ACT != 'login' and $ACT != 'logout' and $ACT != 'profile' and $ACT != 'revisions') {
   echo '     <div class="homelink">
-        <a href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki">',
+        <a href="https://www.dokuwiki.org/dokuwiki" title="Driven by DokuWiki">',
         '<img src="', DOKU_TPL, 'images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
         <a href="', DOKU_BASE, 'feed.php" title="Recent changes RSS feed">',
         '<img src="', DOKU_TPL, 'images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" /></a>
