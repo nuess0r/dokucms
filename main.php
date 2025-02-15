@@ -108,9 +108,11 @@ if($_SERVER['REMOTE_USER']){
 	tpl_button('history');
   tpl_button('revert');
 }
-if($conf['tpl']['dokucms']['showbacklinks']) {
-  tpl_button('backlink');
-  echo '&nbsp;';
+if (array_key_exists('showbacklinks', $conf['tpl']['dokucms']??[])) {
+  if($conf['tpl']['dokucms']['showbacklinks']) {
+    tpl_button('backlink');
+    echo '&nbsp;';
+  }
 }
 echo '         &nbsp;
        </div>
@@ -118,14 +120,18 @@ echo '         &nbsp;
 if(!$_SERVER['REMOTE_USER']){ 
   tpl_searchform();
   echo '&nbsp';
-  if($conf['tpl']['dokucms']['showmedia'] and $ACT != 'login' and $ACT != 'logout') {   
-    tpl_button('media');
+  if (array_key_exists('showmedia', $conf['tpl']['dokucms']??[])) {
+    if($conf['tpl']['dokucms']['showmedia'] and $ACT != 'login' and $ACT != 'logout') {
+      tpl_button('media');
+    }
   }
 } else {
   if($ACT != 'login' and $ACT != 'logout'){
-    if($conf['tpl']['dokucms']['showsearch']) {  
-      tpl_searchform();
-      echo '&nbsp';
+    if (array_key_exists('showsearch', $conf['tpl']['dokucms']??[])) {
+      if($conf['tpl']['dokucms']['showsearch']) {
+        tpl_searchform();
+        echo '&nbsp';
+      }
     }
     tpl_button('media');
   }
