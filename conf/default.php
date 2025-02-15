@@ -7,11 +7,11 @@
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
  */
 
-$conf['tpl']['dokucms']['sidebar'] = 'index';  // 'file' or 'index'
-$conf['tpl']['dokucms']['cleanindex'] = 0;  // 1 or 0
-$conf['tpl']['dokucms']['cleanindexlist'] = '';  // empty or comma-separated list of namespaces
-$conf['tpl']['dokucms']['showsearch'] = 0;  // 1 or 0
-$conf['tpl']['dokucms']['showbacklinks'] = 0;  // 1 or 0
-$conf['tpl']['dokucms']['showmedia'] = 0;  // 1 or 0
-$conf['tpl']['dokucms']['sidebaredit'] = 1; // 1 or 0 
+$conf['sidebar'] = 'index';  // 'file' or 'index'
+$conf['cleanindex'] = 0;  // 1 or 0
+$conf['cleanindexlist'] = '';  // empty or comma-separated list of namespaces
+$conf['showsearch'] = 0;  // 1 or 0
+$conf['showbacklinks'] = 0;  // 1 or 0
+$conf['showmedia'] = 0;  // 1 or 0
+$conf['sidebaredit'] = 1; // 1 or 0
 ?>
