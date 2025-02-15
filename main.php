@@ -1,10 +1,12 @@
 <?php
 /**
- * DokuWiki DokuCMS Template
+ * DokuWiki Template DokuCMS Functions - adapted from arctic template
+ * Template used on brain4free.org. Based on dokucms by Klaus Vormweg
  *
- * @link   http://wiki.splitbrain.org/wiki:tpl:templates
+ * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
+ * @author Christoph Zimmermann <nussgipfel@brain4free.org>
  */
 
 // must be run from within DokuWiki
@@ -110,8 +112,8 @@ if($_SERVER['REMOTE_USER']){
 	tpl_button('history');
   tpl_button('revert');
 }
-if (array_key_exists('showbacklinks', $conf['tpl']['dokucms']??[])) {
-  if($conf['tpl']['dokucms']['showbacklinks']) {
+if (array_key_exists('showbacklinks', $conf['tpl']['brain4free']??[])) {
+  if($conf['tpl']['brain4free']['showbacklinks']) {
     tpl_button('backlink');
     echo '&nbsp;';
   }
@@ -122,15 +124,15 @@ echo '         &nbsp;
 if(!$_SERVER['REMOTE_USER']){ 
   tpl_searchform();
   echo '&nbsp';
-  if (array_key_exists('showmedia', $conf['tpl']['dokucms']??[])) {
-    if($conf['tpl']['dokucms']['showmedia'] and $ACT != 'login' and $ACT != 'logout') {
+  if (array_key_exists('showmedia', $conf['tpl']['brain4free']??[])) {
+    if($conf['tpl']['brain4free']['showmedia'] and $ACT != 'login' and $ACT != 'logout') {
       tpl_button('media');
     }
   }
 } else {
   if($ACT != 'login' and $ACT != 'logout'){
-    if (array_key_exists('showsearch', $conf['tpl']['dokucms']??[])) {
-      if($conf['tpl']['dokucms']['showsearch']) {
+    if (array_key_exists('showsearch', $conf['tpl']['brain4free']??[])) {
+      if($conf['tpl']['brain4free']['showsearch']) {
         tpl_searchform();
         echo '&nbsp';
       }

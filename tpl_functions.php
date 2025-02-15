@@ -1,11 +1,13 @@
 <?php
 /**
  * DokuWiki Template DokuCMS Functions - adapted from arctic template
+ * Template used on brain4free.org. Based on dokucms by Klaus Vormweg
  *
  * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author  Michael Klier <chi@chimeric.de>
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
+ * @author Christoph Zimmermann <nussgipfel@brain4free.org>
  */
 
 // must be run from within DokuWiki

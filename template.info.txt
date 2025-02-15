@@ -1,7 +1,7 @@
 base     brain4free
 author   Christoph Zimmermann
-email    klaus.vormweg@gmx.de
+email    nussgipfel@brain4free.org
 date     2015-10-25
 name     brain4free Template
 desc     Template used on brain4free.org. Based on dokucms by Klaus Vormweg
-url      http://www.tuhh.de/~psvkv/dokucms/index.html
+url      https://www.dokuwiki.org/template:dokucms
