@@ -234,14 +234,16 @@ function _tpl_pageinfo(){
   // echo it
   if($INFO['exists']){
     echo $lang['lastmod'], ': ', $date;
-    if($_SERVER['REMOTE_USER']) {
-      if($INFO['editor']) {
-        echo ' ', $lang['by'], ' ', $INFO['editor'];
-      } else {
-        echo ' (', $lang['external_edit'], ')';
-      }
-      if($INFO['locked']){
-        echo ' &middot; ', $lang['lockedby'], ': ', $INFO['locked'];
+    if (array_key_exists('REMOTE_USER', $_SERVER)) {
+      if($_SERVER['REMOTE_USER']) {
+        if($INFO['editor']) {
+          echo ' ', $lang['by'], ' ', $INFO['editor'];
+        } else {
+          echo ' (', $lang['external_edit'], ')';
+        }
+        if($INFO['locked']){
+          echo ' &middot; ', $lang['lockedby'], ': ', $INFO['locked'];
+        }
       }
     }
     return true;
