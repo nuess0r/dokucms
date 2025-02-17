@@ -106,11 +106,13 @@ if($ACT != 'login' and $ACT != 'logout') {
   tpl_button('login');
   echo '&nbsp;';
 }
-if($_SERVER['REMOTE_USER']){
-  tpl_button('subscribe');
-	tpl_button('profile');
-	tpl_button('history');
-  tpl_button('revert');
+if (array_key_exists('REMOTE_USER', $_SERVER)) {
+  if($_SERVER['REMOTE_USER']){
+    tpl_button('subscribe');
+    tpl_button('profile');
+    tpl_button('history');
+    tpl_button('revert');
+  }
 }
 if (array_key_exists('showbacklinks', $conf['tpl']['brain4free']??[])) {
   if($conf['tpl']['brain4free']['showbacklinks']) {
@@ -121,7 +123,27 @@ if (array_key_exists('showbacklinks', $conf['tpl']['brain4free']??[])) {
 echo '         &nbsp;
        </div>
        <div class="bar-right" id="bar__bottomright">',"\n";
-if(!$_SERVER['REMOTE_USER']){ 
+if (array_key_exists('REMOTE_USER', $_SERVER)) {
+  if($_SERVER['REMOTE_USER']){
+    if($ACT != 'login' and $ACT != 'logout'){
+      if (array_key_exists('showsearch', $conf['tpl']['brain4free']??[])) {
+        if($conf['tpl']['brain4free']['showsearch']) {
+          tpl_searchform();
+          echo '&nbsp';
+        }
+      }
+      tpl_button('media');
+    }
+  } else {
+    tpl_searchform();
+    echo '&nbsp';
+    if (array_key_exists('showmedia', $conf['tpl']['brain4free']??[])) {
+      if($conf['tpl']['brain4free']['showmedia'] and $ACT != 'login' and $ACT != 'logout') {
+        tpl_button('media');
+      }
+    }
+  }
+} else {
   tpl_searchform();
   echo '&nbsp';
   if (array_key_exists('showmedia', $conf['tpl']['brain4free']??[])) {
@@ -129,17 +151,8 @@ if(!$_SERVER['REMOTE_USER']){
       tpl_button('media');
     }
   }
-} else {
-  if($ACT != 'login' and $ACT != 'logout'){
-    if (array_key_exists('showsearch', $conf['tpl']['brain4free']??[])) {
-      if($conf['tpl']['brain4free']['showsearch']) {
-        tpl_searchform();
-        echo '&nbsp';
-      }
-    }
-    tpl_button('media');
-  }
 }
+
 tpl_button('edit');
 echo '&nbsp;
       </div>
