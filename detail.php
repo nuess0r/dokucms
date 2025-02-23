@@ -54,7 +54,11 @@ if($ERROR) {
   foreach($fields as $key => $tag){
       $t = array();
       if (!empty($tag[0])) $t = array($tag[0]);
-      if(is_array($tag[3])) $t = array_merge($t,$tag[3]);
+      if (array_key_exists(3, $tag)) {
+        if(is_array($tag[3])) {
+          $t = array_merge($t,$tag[3]);
+        }
+      }
       $value = tpl_img_getTag($t);
       if ($value) {
           echo '<dt>'.$lang[$tag[1]].':</dt><dd>';
@@ -67,14 +71,14 @@ if($ERROR) {
       </dl>
     </div>
 ';
-  echo '      <p class="img_footer">&larr; ', $lang['img_backto'], ' '; 
-  tpl_pagelink($ID); 
+  echo '      <p class="img_footer">&larr; ', sprintf($lang['btn_img_backto'], ""), ' ';
+  tpl_pagelink($ID);
   echo '</p>
 ';
   $imgNS = getNS($IMG);
   $authNS = auth_quickaclcheck("$imgNS:*");
   if ($authNS >= AUTH_UPLOAD) {
-      echo '<p class="img_back"><a href="'.media_managerURL(array('ns' => $imgNS, 'image' => $IMG)).'">'.$lang['img_manager'].'</a></p>';
+      echo '<p class="img_back"><a href="'.media_managerURL(array('ns' => $imgNS, 'image' => $IMG)).'">'.$lang['btn_media'].'</a></p>';
   }
 }
 echo '  </div>
